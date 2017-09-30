@@ -1,0 +1,46 @@
+<ion-header>
+    <ion-navbar color="my-gray">
+        <ion-title>Editar cobros</ion-title>
+        <ion-buttons end>
+            <button ion-button (click)="closeModal()">Atrás</button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+    <div style="margin-left: 15px;margin-bottom: 0px;margin-top: 20px;">
+        <button ion-button outline class="myEditButton" (click)="editCobro('normal')"><ion-icon name="build"></ion-icon></button>
+        <h4>Tarifa normal</h4>
+    </div>
+    <ion-item>
+        <p style="color: #b7b7b7;font-size: 12px;">Mostrando</p>
+        <p>{{estado_cobro}}</p>
+    </ion-item>
+    <ion-item *ngIf="isCobro">
+        <p style="color: #b7b7b7;font-size: 12px;">Valor</p>
+        <p>{{valor}}</p>
+    </ion-item>
+    <ion-item *ngIf="isCobro">
+        <p style="color: #b7b7b7;font-size: 12px;">Tiempo</p>
+        <p>{{tiempo}}</p>
+    </ion-item>
+
+
+    <div style="margin-left: 15px;margin-bottom: 0px;margin-top: 20px;">
+        <button ion-button outline class="myEditButton" (click)="editCobro('promo')"><ion-icon name="build"></ion-icon></button>
+        <h4>Tarifa promoción</h4>
+    </div>
+    <ion-item>
+        <p style="color: #b7b7b7;font-size: 12px;">Estado</p>
+        <p>{{estado_promo}}</p>
+    </ion-item>
+    <ion-item *ngIf="isActiva">
+        <p style="color: #b7b7b7;font-size: 12px;">Valor</p>
+        <p>{{valor_promo}}</p>
+    </ion-item>
+    <ion-item *ngIf="isActiva">
+        <p style="color: #b7b7b7;font-size: 12px;">Tiempo</p>
+        <p>{{tiempo_promo}}</p>
+    </ion-item>
+</ion-content>

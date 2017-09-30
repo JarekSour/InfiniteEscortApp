@@ -1,0 +1,17 @@
+<ion-header>
+    <ion-navbar color="my-gray">
+        <ion-title>Mensajes</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding style="background: #ccc;">
+    <p style="color: black;margin-bottom: 15px;font-size: 13px;margin-left: 15px;">*Preciona un mensaje para verlo completo o eliminarlo</p>
+    <div *ngFor="let item of mensajes">
+        <ion-card (click)="showMensaje(item)">
+            <ion-item style="background: #424242;">
+                <p class="date">{{ formatDate(item.created_at) }}</p>
+                <p class="service">{{ item.mensaje }}</p>
+            </ion-item>
+        </ion-card>
+    </div>
+</ion-content>

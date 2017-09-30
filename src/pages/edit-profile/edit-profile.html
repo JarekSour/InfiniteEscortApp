@@ -1,0 +1,84 @@
+<ion-header>
+    <ion-navbar color="my-gray">
+        <ion-title>Editar perfil</ion-title>
+        <ion-buttons end>
+            <button ion-button (click)="closeModal()">Atrás</button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-row>
+        <ion-item>
+            <ion-row>
+                <ion-col col-6>
+                    <p style="color: #b7b7b7;font-size: 12px;">Nacionalidad</p>
+                    <p>{{_nacionalidad}}</p>
+                </ion-col>
+                <ion-col col-6>
+                    <p style="color: #b7b7b7;font-size: 12px;">Suscripción</p>
+                    <p>{{_suscripcion}}</p>
+                </ion-col>
+            </ion-row>
+        </ion-item>
+        <ion-item>
+            <p style="color: #b7b7b7;font-size: 12px;">Fecha de Nacimiento</p>
+            <p>{{_nacimiento}}</p>
+        </ion-item>
+        <ion-item>
+            <button ion-button outline class="myEditButton" (click)="editParam('medidas')"><ion-icon name="build"></ion-icon></button>
+            <p style="color: #b7b7b7;font-size: 12px;">Medidas</p>
+            <p>{{_medidas}}</p>
+        </ion-item>
+        <ion-item>
+            <ion-row>
+                <ion-col col-6>
+                    <button ion-button outline class="myEditButton" (click)="editParam('estatura')" style="height: 24px;width: 25px;"><ion-icon name="build"></ion-icon></button>
+                    <p style="color: #b7b7b7;font-size: 12px;">Estatura</p>
+                    <p>{{_estatura}} cm.</p>
+                </ion-col>
+                <ion-col col-6>
+                    <button ion-button outline class="myEditButton" (click)="editParam('peso')" style="height: 24px;width: 25px;"><ion-icon name="build"></ion-icon></button>
+                    <p style="color: #b7b7b7;font-size: 12px;">Peso</p>
+                    <p>{{_peso}} kg.</p>
+                </ion-col>
+            </ion-row>
+        </ion-item>
+        <ion-item>
+            <ion-row>
+                <ion-col col-6>
+                    <button ion-button outline class="myEditButton" (click)="editParam('fuma')" style="height: 24px;width: 25px;"><ion-icon name="build"></ion-icon></button>
+                    <p style="color: #b7b7b7;font-size: 12px;">Fumas</p>
+                    <p>{{_fuma}}</p>
+                </ion-col>
+                <ion-col col-6>
+                    <button ion-button outline class="myEditButton" (click)="editParam('bebe')" style="height: 24px;width: 25px;"><ion-icon name="build"></ion-icon></button>
+                    <p style="color: #b7b7b7;font-size: 12px;">Bebes</p>
+                    <p>{{_bebe}}</p>
+                </ion-col>
+            </ion-row>
+        </ion-item>
+        <ion-item>
+            <button ion-button outline class="myEditButton" (click)="editParam('depilacion')"><ion-icon name="build"></ion-icon></button>
+            <p style="color: #b7b7b7;font-size: 12px;">Depilacion</p>
+            <p>{{_depilacion}}</p>
+        </ion-item>
+        <ion-item>
+            <button ion-button outline class="myEditButton" (click)="editParam('idioma')"><ion-icon name="build"></ion-icon></button>
+            <p style="color: #b7b7b7;font-size: 12px;">Idiomas</p>
+            <p>
+                <ion-badge item-end *ngFor="let item of _idioma">{{ this.getLenguaje(item)}}</ion-badge>
+            </p>
+        </ion-item>
+        <ion-item>
+            <button ion-button outline class="myEditButton" (click)="editParam('descripcion')"><ion-icon name="build"></ion-icon></button>
+            <p style="color: #b7b7b7;font-size: 12px;">Descripción</p>
+            <p>{{_descripcion}}</p>
+        </ion-item>
+        <!-- <ion-item>
+            <button ion-button outline class="myEditButton" (click)="editParam('description')"><ion-icon name="build"></ion-icon></button>
+            <p style="color: #b7b7b7;font-size: 12px;">Descripción inglés</p>
+            <p>{{_description}}</p>
+        </ion-item> -->
+    </ion-row>
+</ion-content>

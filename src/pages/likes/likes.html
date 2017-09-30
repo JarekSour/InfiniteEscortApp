@@ -1,0 +1,16 @@
+<ion-header>
+	<ion-navbar color="my-gray">
+		<ion-title>Me gusta</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content padding>
+	<p style="color: gray;margin-left: 15px;font-size: 13px;">*Lista de lugares donde te dan "Me gusta"</p>
+	<ion-list>
+		<ion-item *ngFor="let item of likes">
+			<h2 style="font-size: 19px;">{{item.city}}</h2>
+			<p>{{item.country}}</p>
+			<button ion-button clear item-end style="font-size: 25px;color:#ea3177;">{{item.count}}</button>
+		</ion-item>
+	</ion-list>
+</ion-content>

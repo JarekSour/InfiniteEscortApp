@@ -1,0 +1,85 @@
+<ion-header>
+    <ion-navbar color="my-gray">
+        <ion-title>Editar cobros</ion-title>
+        <ion-buttons end>
+            <button ion-button (click)="closeModal()">Atrás</button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+    <form (submit)='updatePerfil()' #registerForm="ngForm">
+        <ion-item style="margin-top: 15px;" *ngIf="isCobro">
+            <ion-label stacked></ion-label>
+            <ion-select [(ngModel)]="cobro.estado_cobro" (ionChange)='changeEstadoCobro()' name="estado_cobro" required cancelText="Cancelar">
+                <ion-option value="1">Visible</ion-option>
+                <ion-option value="0">Oculto</ion-option>
+            </ion-select>
+        </ion-item>
+        <ion-item style="margin-top: 15px;" *ngIf="isNormal">
+            <ion-label stacked>Precio</ion-label>
+            <ion-input type="number" [(ngModel)]="cobro.costo" required name="costo"></ion-input>
+        </ion-item>
+        <ion-item style="margin-top: 15px;" *ngIf="isNormal">
+            <ion-label stacked>Tiempo</ion-label>
+            <ion-select [(ngModel)]="cobro.tiempo" name="tiempo" required cancelText="Cancelar">
+                <ion-option value="30_normal">por 30 min servicio normal</ion-option>
+                <ion-option value="30_americana">por 30 min servicio normal con americana</ion-option>
+                <ion-option value="30_todo">por 30 min servicio completo todo incluido</ion-option>
+                <ion-option value="45_normal">por 45 min servicio normal</ion-option>
+                <ion-option value="45_americana">por 45 min servicio normal con americana</ion-option>
+                <ion-option value="45_todo">por 45 min servicio completo todo incluido</ion-option>
+                <ion-option value="1_normal">por 1 hora servicio normal</ion-option>
+                <ion-option value="1_americana">por 1 hora servicio normal con americana</ion-option>
+                <ion-option value="1_todo">por 1 hora servicio completo todo incluido</ion-option>
+                <ion-option value="12_normal">por 1 1/2 hora servicio normal</ion-option>
+                <ion-option value="12_americana">por 1 1/2 hora servicio normal con americana</ion-option>
+                <ion-option value="12_todo">por 1 1/2 hora servicio completo todo incluido</ion-option>
+                <ion-option value="2_normal">por 2 horas servicio normal</ion-option>
+                <ion-option value="2_americana">por 2 horas servicio normal con americana</ion-option>
+                <ion-option value="2_todo">por 2 horas servicio completo todo incluido</ion-option>
+            </ion-select>
+        </ion-item>
+
+        <ion-item style="margin-top: 15px;" *ngIf="isActiva">
+            <ion-label stacked></ion-label>
+            <ion-select [(ngModel)]="cobro.estado_promocion" (ionChange)='changeEstadoPromo()' name="estado" required cancelText="Cancelar">
+                <ion-option value="1">Activada</ion-option>
+                <ion-option value="0">Desactivada</ion-option>
+            </ion-select>
+        </ion-item>
+        <ion-item style="margin-top: 15px;" *ngIf="isPromo">
+            <ion-label stacked>Precio</ion-label>
+            <ion-input type="number" [(ngModel)]="cobro.costo_promo" required name="costo_promo"></ion-input>
+        </ion-item>
+        <ion-item style="margin-top: 15px;" *ngIf="isPromo">
+            <ion-label stacked>Tiempo</ion-label>
+            <ion-select [(ngModel)]="cobro.tiempo_promo" name="tiempo_promo" required cancelText="Cancelar">
+                <ion-option value="30_normal">por 30 min servicio normal</ion-option>
+                <ion-option value="30_americana">por 30 min servicio normal con americana</ion-option>
+                <ion-option value="30_todo">por 30 min servicio completo todo incluido</ion-option>
+                <ion-option value="45_normal">por 45 min servicio normal</ion-option>
+                <ion-option value="45_americana">por 45 min servicio normal con americana</ion-option>
+                <ion-option value="45_todo">por 45 min servicio completo todo incluido</ion-option>
+                <ion-option value="1_normal">por 1 hora servicio normal</ion-option>
+                <ion-option value="1_americana">por 1 hora servicio normal con americana</ion-option>
+                <ion-option value="1_todo">por 1 hora servicio completo todo incluido</ion-option>
+                <ion-option value="12_normal">por 1 hora 1/2 servicio normal</ion-option>
+                <ion-option value="12_americana">por 1 hora 1/2 servicio normal con americana</ion-option>
+                <ion-option value="12_todo">por 1 hora 1/2 servicio completo todo incluido</ion-option>
+                <ion-option value="2_normal">por 2 horas servicio normal</ion-option>
+                <ion-option value="2_americana">por 2 horas servicio normal con americana</ion-option>
+                <ion-option value="2_todo">por 2 horas servicio completo todo incluido</ion-option>
+            </ion-select>
+        </ion-item>
+
+        <ion-grid>
+            <ion-row>
+                <ion-col col-8 offset-2>
+                    <button ion-button block type="submit" [disabled]="!registerForm.form.valid" style="margin-top: 40px;background: #e0006c;">Guardar</button>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </form>
+</ion-content>

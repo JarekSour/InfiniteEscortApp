@@ -1,0 +1,44 @@
+<ion-header>
+    <ion-navbar color="my-gray">
+        <ion-title>Datos de contacto</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding style="background: #ccc;">
+    <p style="color: black;margin-bottom: 15px;font-size: 13px;margin-left: 15px;">*Preciona un cuadro para editarlo</p>
+    <ion-card style="background: #424242;" (click)="updateDato('telefono')">
+        <ion-card-header class="name">
+            Teléfono
+        </ion-card-header>
+        <ion-card-content class="data">
+            +{{telefono}}
+        </ion-card-content>
+    </ion-card>
+    <ion-card style="background: #424242;" (click)="updateDato('sector')">
+        <ion-card-header class="name">
+            Sector de atención
+        </ion-card-header>
+        <ion-card-content class="data">
+            {{sector}}
+        </ion-card-content>
+    </ion-card>
+    <ion-card style="background: #424242;" (click)="updateDato('donde')">
+        <ion-card-header class="name">
+            Donde atiendes
+        </ion-card-header>
+        <ion-card-content class="data">
+            {{donde}}
+        </ion-card-content>
+    </ion-card>
+    <ion-card style="background: #424242;" (click)="updateDato('horario')">
+        <ion-card-header class="name">
+            Horario de atención
+        </ion-card-header>
+        <ion-card-content class="data">
+            {{horario}}
+        </ion-card-content>
+    </ion-card>
+
+
+
+</ion-content>

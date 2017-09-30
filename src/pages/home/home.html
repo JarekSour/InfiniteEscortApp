@@ -1,0 +1,73 @@
+<ion-header>
+    <ion-navbar color="my-gray">
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>{{_nombre}} | {{_plan}}</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding class="back">
+
+    <ion-fab top right edge>
+        <button ion-fab mini style="background:#20c7c7" (click)="newMessage()"><ion-icon name="chatbubbles" ></ion-icon></button>
+    </ion-fab>
+
+    <ion-row class="back-profile">
+        <ion-col col-3></ion-col>
+        <ion-col col-6 center text-center>
+            <img style="max-height: 230px;border: 2px solid #fff;box-shadow: 0 0 5px grey;" src="{{_imgProfile}}">
+            <button ion-button color="dark" class="btn-round" (click)="updateAvatar()"> <ion-icon name="build"></ion-icon></button>
+        </ion-col>
+    </ion-row>
+
+    <ion-row style="margin-top: 10px;">
+        <ion-col col-4 text-center style="color: #676767;" (click)="modalEditProfile()">
+            <ion-icon name="contact" style="font-size: 25px;"></ion-icon><br>Editar perfil
+        </ion-col>
+        <ion-col col-4 text-center style="color: #676767;" (click)="modalEditCobro()">
+            <ion-icon name="logo-usd" style="font-size: 25px;"></ion-icon><br>Cobros
+        </ion-col>
+        <ion-col col-4 text-center style="color: #676767;" (click)="openWeb()">
+            <ion-icon name="logo-chrome" style="font-size: 25px;"></ion-icon><br>Navegador
+        </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-item style="padding-top: 15px;">
+            <p style="color: #b7b7b7;font-size: 12px;">Suscripcion</p>
+            <p *ngIf="!ifOver">Tu suscripción termina el {{suscripcion}}</p>
+            <p *ngIf="ifOver" style="color: #ff5977;">Tu suscripción ha terminado el {{suscripcion}} </p>
+        </ion-item>
+        <ion-item *ngIf="ifPromo">
+            <p style="color: #b7b7b7;font-size: 12px;">
+                <ion-icon style="color: #ff3131;" name="alert"></ion-icon> Promoción</p>
+            <p style="white-space: normal;">Estas con "promoción" activada</p>
+        </ion-item>
+        <ion-item *ngIf="ifDestacada">
+            <p style="white-space: normal;"><ion-icon style="color: #ff3131;" name="alert"></ion-icon> Apareces en sección "Destacadas" hasta el próximo {{destacada}}</p>
+        </ion-item>
+        <ion-item *ngIf="ifNosVisita">
+            <p style="white-space: normal;"><ion-icon style="color: #ff3131;" name="alert"></ion-icon> Hace poco cambiaste tu país, apareces en sección "Nos visitan" hasta el próximo {{nos_visita}}</p>
+        </ion-item>
+    </ion-row>
+
+    <ion-row>
+        <ion-col col-6>
+            <ion-card style="background: #989898;">
+                <ion-card-content>
+                    <p class="nom">Número de visitas</p>
+                    <p class="txt" (click)="updateProfile('correo')">{{_visit}}</p>
+                </ion-card-content>
+            </ion-card>
+        </ion-col>
+        <ion-col col-6>
+            <ion-card style="background: #989898;">
+                <ion-card-content>
+                    <p class="nom">Número de me gusta</p>
+                    <p class="txt" (click)="updateProfile('correo')">{{_like}}</p>
+                </ion-card-content>
+            </ion-card>
+        </ion-col>
+    </ion-row>
+
+</ion-content>

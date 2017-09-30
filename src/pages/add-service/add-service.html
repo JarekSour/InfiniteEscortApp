@@ -1,0 +1,27 @@
+<ion-header>
+    <ion-navbar color="my-gray">
+        <ion-title>Agrega servicios</ion-title>
+        <ion-buttons end>
+            <button ion-button (click)="closeModal()">Atrás</button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+    <ion-list radio-group>
+        <ion-list-header>
+            Selecciona los servicios que quieras agregar
+        </ion-list-header>
+
+        <ion-item *ngFor="let item of arr">
+            <ion-label>{{transService(item)}}</ion-label>
+            <ion-checkbox color="my-pink" checked="false" [(ngModel)]="checkItems[item]"></ion-checkbox>
+        </ion-item>
+    </ion-list>
+
+    <ion-fab right bottom>
+        <button ion-fab class="my-fab" (click)="saveService()" >GUARDAR</button>
+    </ion-fab>
+
+</ion-content>

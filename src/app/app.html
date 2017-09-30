@@ -1,0 +1,54 @@
+<ion-menu [content]="content" id="menuSlide">
+    <ion-content class="back-sidemenu">
+        <div class="box-list">
+            <ion-row style="background: #1a1a1a;height: 240px;">
+                <ion-col col-1></ion-col>
+                <ion-col col-10 class="ion-img-box" style="text-align: center;">
+                    <img src="assets/img/logo.png" alt="" style="margin-top: 15px;">
+                </ion-col>
+                <ion-col col-12 style="margin-top: 0px;">
+                    <p style="color:white;margin-left: 15px;font-size: 20px;margin-bottom: 0px;">{{_nombre}}</p>
+                    <p style="color:white;margin-left: 15px;font-size: 12px;margin-bottom: 15px;margin-top: 4px;">{{_email}}</p>
+                </ion-col>
+            </ion-row>
+        </div>
+        <ion-list>
+            <button menuClose ion-item icon-left (click)="goToPage('home')" class="btn-trans btn-menu" style="font-size: 14px;padding-left: 30px;">
+                Inicio
+            </button>
+            <button menuClose ion-item icon-left (click)="goToPage('gallery')" class="btn-trans btn-menu" style="font-size: 14px;padding-left: 30px;">
+                Galería
+            </button>
+            <button menuClose ion-item icon-left (click)="goToPage('service')" class="btn-trans btn-menu" style="font-size: 14px;padding-left: 30px;">
+                Servicios
+            </button>
+            <button menuClose ion-item icon-left (click)="goToPage('contact')" class="btn-trans btn-menu" style="font-size: 14px;padding-left: 30px;">
+                Datos de contacto
+            </button>
+            <button menuClose ion-item icon-left (click)="goToPage('message')" class="btn-trans btn-menu" style="font-size: 14px;padding-left: 30px;">
+                Mensajes
+            </button>
+            <button menuClose ion-item icon-left (click)="goToPage('likes')" class="btn-trans btn-menu" style="font-size: 14px;padding-left: 30px;">
+                Me gusta
+            </button>
+            <button menuClose ion-item icon-left (click)="goToPage('calendar')" class="btn-trans btn-menu" style="font-size: 14px;padding-left: 30px;">
+                Calendario
+            </button>
+        </ion-list>
+
+        <ion-footer no-shadow>
+            <ion-list style="margin-bottom: 0px;">
+                <button menuClose ion-item icon-left (click)="closeSession()" class="btn-trans btn-menu" style="font-size: 12px;padding-left: 30px;">
+              Cerrar sesión
+                  </button>
+                <button menuClose ion-item icon-left style="font-size: 10px;background: #1a1a1a;color: white;">
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;INFINITEESCORTS - v 1.0.0
+              </button>
+            </ion-list>
+        </ion-footer>
+    </ion-content>
+
+</ion-menu>
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

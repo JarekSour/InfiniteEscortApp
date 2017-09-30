@@ -1,0 +1,20 @@
+<ion-header>
+    <ion-navbar color="my-gray">
+        <ion-title>Galeria</ion-title>
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+    <p style="color: gray;margin-bottom: 0px;font-size: 13px;">*Preciona la imagen para hacer zoom</p>
+    <p style="color: gray;margin-top: 5px;font-size: 13px;">*Manten precionada la imagen para eliminarla</p>
+    <div class="images">
+        <div class="one-image" *ngFor="let item of imagenes">
+            <img (click)="zoom(item)" src="https://www.infiniteescorts.com/api/v1/imagen/galeria/get?image={{item.url}}" (press)="deleteImagen(item)">
+        </div>
+    </div>
+
+    <ion-fab right bottom>
+        <button ion-fab class="my-fab" style="background: #ea3177;" (click)="UploadImagen()"><ion-icon name="add" ></ion-icon></button>
+    </ion-fab>
+</ion-content>

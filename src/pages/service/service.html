@@ -1,0 +1,21 @@
+<ion-header>
+    <ion-navbar color="my-gray">
+        <ion-title>Servicios</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding style="background: #ccc;">
+    <p style="color: black;margin-bottom: 15px;font-size: 13px;margin-left: 15px;">*Preciona un servicio para eliminarlo</p>
+    <div *ngFor="let item of servicios">
+        <ion-card (click)="deleteService(item)">
+            <ion-item style="background: #424242;">
+                <p class="service">{{ transService(item.servicio) }}</p>
+                <p class="date">añadido el: {{ formatDate(item.created_at) }}</p>
+            </ion-item>
+        </ion-card>
+    </div>
+
+    <ion-fab right bottom>
+        <button ion-fab class="my-fab" (click)="createService()"><ion-icon name="add" ></ion-icon></button>
+    </ion-fab>
+</ion-content>
